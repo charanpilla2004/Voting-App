@@ -206,10 +206,6 @@ PORT=8000
 
 ---
 
-# Developed By
-
-Charan Pilla
-Frontend / Full Stack Developer
 
 # Project Highlights
 
