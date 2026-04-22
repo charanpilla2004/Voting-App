@@ -1,1 +1,220 @@
 # Voting-App
+
+A modern full-stack polling application where users can create polls, vote, and view live voting results. This project focuses on multi-user interaction, shared voting results, and user-specific poll management.
+
+# Project Overview
+
+This application allows multiple users to:
+
+- Create polls
+- Vote on polls
+- View live results
+- Delete polls only from their own account
+- Share voting results across all users
+
+The application stores all data in MongoDB Atlas and updates UI dynamically using React Context API.
+
+# Key Features
+
+# Poll Creation
+
+- Create custom polls
+- Minimum 2 options
+- Maximum 4 options
+- Poll visible to all users
+
+---
+
+# Voting System
+
+- Users can vote once per poll
+- Votes update instantly
+- Total votes calculated dynamically
+- Vote percentage shown visually
+
+---
+
+## Live Results Visualization
+
+- Real-time vote updates
+- Progress bar UI
+- Percentage calculation
+- Shared results across users
+
+---
+
+## Multi-User Support
+
+Example Scenario:
+
+User A creates poll
+User B votes
+User C votes
+
+Result updates for:
+
+- User A
+- User B
+- User C
+
+This ensures \*\*shared voting analytics.
+
+# User-Specific Poll Deletion (Unique Feature)
+
+Example:
+
+User A creates poll
+User B deletes poll
+
+Result:
+
+- Poll removed only for User B
+- Poll still visible for User A
+- Poll still visible for User C
+
+This feature improves \*\*multi-user independence.
+
+# UI Features
+
+- Clean Card UI
+- Interactive Buttons
+- Vote Progress Bars
+- Responsive Layout
+- Smooth User Experience
+
+---
+
+# Technologies Used
+
+# Frontend
+
+- React.js
+- Context API
+- Axios
+- CSS (App.css & index.css)
+
+# Backend
+
+- Node.js
+- Express.js
+
+# Database
+
+- MongoDB Atlas
+- Mongoose
+
+# Project Structure
+
+## Frontend
+
+src/
+│
+├── components/
+│ ├── PollForm.jsx
+│ ├── PollList.jsx
+│ ├── PollCard.jsx
+│ └── ProgressBar.jsx
+│
+├── context/
+│ └── PollContext.jsx
+│
+├── services/
+│ └── api.js
+│
+├── App.jsx
+└── index.jsx
+
+```
+
+
+
+## Backend
+
+
+backend/
+│
+├── controllers/
+├── models/
+├── routes/
+├── config/
+└── server.js
+```
+
+# 🔗 API Routes
+
+| Method | Route              | Description   |
+| ------ | ------------------ | ------------- |
+| GET    | /polls             | Get all polls |
+| POST   | /polls             | Create poll   |
+| POST   | /polls/:id/vote    | Vote poll     |
+| DELETE | /polls/:id         | Delete poll   |
+| GET    | /polls/:id/results | Get results   |
+
+---
+
+# Database Schema
+
+Poll Model
+
+```
+{
+  question: String,
+  createdBy: String,
+  options: [
+    {
+      text: String,
+      votes: Number
+    }
+  ],
+  voters: [String]
+}
+```
+
+# Setup Instructions
+
+## Backend
+
+npm install
+npm start
+
+## Frontend
+
+npm install
+npm run dev
+
+# Environment Variables
+
+Create `.env` file:
+
+MONGO_URI=your_mongodb_connection
+PORT=8000
+
+# Use Cases
+
+- College Voting
+- Team Decisions
+- Survey App
+- Feedback Collection
+
+# Future Improvements
+
+- Authentication
+- Real-time sockets
+- Poll expiration
+- Poll analytics
+- Shareable poll links
+
+---
+
+# Developed By
+
+Charan Pilla
+Frontend / Full Stack Developer
+
+# Project Highlights
+
+- Full Stack Application
+- MongoDB Integration
+- Multi-User Support
+- Shared Voting Results
+- Modern UI Design
